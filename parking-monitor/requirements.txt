@@ -1,0 +1,10 @@
+# Only opencv-contrib-python - never install opencv-python alongside it,
+# the two packages overwrite each other's cv2 module.
+opencv-contrib-python>=4.7
+numpy
+pyyaml
+requests
+Pillow
+pytest
+# AP mode (source.a9v720.mode: ap) imports the a9-v720 protocol code, which needs:
+xmltodict

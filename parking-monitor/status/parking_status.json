@@ -1,0 +1,28 @@
+{
+  "updated": "2026-10-26T20:54:26+08:00",
+  "camera_ok": false,
+  "camera_status": "blind",
+  "free_count": 0,
+  "total": 2,
+  "summary": "0/2 free (camera blind)",
+  "spots": {
+    "Spot A": {
+      "marker_id": 1,
+      "state": "unknown",
+      "since": null
+    },
+    "Spot B": {
+      "marker_id": 2,
+      "state": "unknown",
+      "since": null
+    }
+  },
+  "started": "2026-10-26T20:38:54+08:00",
+  "events": [
+    {
+      "time": "2026-10-26T20:39:25+08:00",
+      "spot": "Camera",
+      "state": "blind"
+    }
+  ]
+}

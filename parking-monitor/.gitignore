@@ -1,0 +1,6 @@
+﻿.venv/
+logs/
+markers/
+test_video.avi
+__pycache__/
+.pytest_cache/

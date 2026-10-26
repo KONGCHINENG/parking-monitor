@@ -1,0 +1,23 @@
+AP-mode keepalive test 2026-10-13 19:57:30
+Camera reachable on port 6123.
+
+Trial keepalive=none (up to 40 s) ...
+  streamed 40.0 s, 140 frames (~3.5 fps), size 640x480
+  ended: time limit reached
+  control packets seen (cmd: count): {0: 4, 101: 1}
+
+Trial keepalive=ping (up to 40 s) ...
+  streamed 40.0 s, 130 frames (~3.2 fps), size 640x480
+  ended: time limit reached
+  control packets seen (cmd: count): {0: 4, 101: 1}
+
+Trial keepalive=heartbeat (up to 40 s) ...
+  streamed 40.1 s, 127 frames (~3.2 fps), size 640x480
+  ended: time limit reached
+  control packets seen (cmd: count): {0: 4, 101: 1}
+
+=== RESULT ===
+  none     :  40.0 s
+  ping     :  40.0 s
+  heartbeat:  40.1 s
+BEST: ap_keepalive: heartbeat keeps the stream alive.

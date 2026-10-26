@@ -1,0 +1,20 @@
+# systemd unit for Raspberry Pi. Edit User and paths, then:
+#   sudo cp deploy/linux/parking-monitor.service /etc/systemd/system/
+#   sudo systemctl daemon-reload && sudo systemctl enable --now parking-monitor
+#   journalctl -u parking-monitor -f
+# Note: Linux has no iCloud client - the JSON is written to ~/parking-status/.
+# Push notifications (ntfy) work normally.
+[Unit]
+Description=ArUco parking spot monitor
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/parking-monitor
+ExecStart=/home/pi/parking-monitor/.venv/bin/python parking_monitor.py run
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

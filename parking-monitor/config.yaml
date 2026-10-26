@@ -1,0 +1,91 @@
+# ---------------------------------------------------------------------------
+# Parking monitor configuration
+# ---------------------------------------------------------------------------
+
+# Where frames come from. Change ONLY `type` (and its section) to switch camera.
+#   mjpeg  - any HTTP MJPEG URL (e.g. the a9-v720 fake server, ESP32-CAM, IP Webcam app)
+#   rtsp   - a normal IP camera (Tapo C200: rtsp://user:pass@IP:554/stream1)
+#   a9v720 - the A9/V720 camera via the a9-v720 project (AP mode or fake server)
+#   file   - a video file, for testing
+source:
+  type: a9v720
+
+  mjpeg:
+    url: "http://127.0.0.1/dev/CAMERA_ID/live"
+
+  rtsp:
+    # Tapo: create a "Camera Account" in the Tapo app first (Advanced settings).
+    url: "rtsp://user:password@192.168.1.50:554/stream1"
+
+  a9v720:
+    # "fakeserver": camera is on your home WiFi and talks to the a9-v720 fake server
+    #               running on this computer (see README Step 1B). We read its MJPEG URL.
+    # "ap":         this computer is joined to the camera's own "Nax..." WiFi network.
+    mode: ap
+    server_url: "http://127.0.0.1:80"   # fake server base URL
+    camera_id: ""                       # empty = use the first camera in /dev/list
+    ap_host: "192.168.169.1"            # AP mode: camera address
+    ap_port: 6123                       # AP mode: camera TCP control port
+    repo_path: "../a9-v720/src"         # AP mode: path to the cloned a9-v720 'src' folder
+    ir_led: false                       # AP mode: force IR LEDs on (night)
+    flip: false                         # AP mode: rotate image 180 deg
+    ap_keepalive: none                  # AP mode: none | ping | heartbeat (see tools/ap_test.py)
+
+  file:
+    path: "test_video.avi"
+    loop: true
+
+  # If no new frame arrives for this long, the camera counts as offline.
+  stale_seconds: 15
+  # Wait between reconnect attempts (doubles up to max on repeated failure).
+  reconnect_min_seconds: 2
+  reconnect_max_seconds: 15
+
+detection:
+  dictionary: DICT_4X4_50
+  clahe: true              # contrast boost - helps at night / in IR mode
+  clahe_clip_limit: 2.0
+  check_interval_seconds: 1.0   # how often a frame is analysed
+
+# Marker ID -> spot name. Use any IDs 0..49 except the reference ID.
+spots:
+  1: "Spot A"
+  2: "Spot B"
+
+# Reference marker: mounted where no car can ever cover it (wall, kerb, pole).
+# If it is not visible the camera is "blind" and no spot is flipped to occupied.
+reference_marker_id: 9
+
+# Debounce: a spot changes state only after the new observation has held
+# continuously for this many seconds.
+# Toy-car prototype: confirm 3 s. Real cars: use 10.
+confirm_seconds: 3
+# Camera must be blind/offline this long before you get a "camera" notification.
+camera_alert_seconds: 30
+
+# Live page for a phone on the same WiFi (works without internet).
+web:
+  enabled: true
+  port: 8080
+  # 127.0.0.1 = only this PC; the phone gets it through Tailscale (safe on shared WiFi).
+  # 'run --lan' overrides this for the offline demo on the camera's WiFi.
+  bind: 127.0.0.1
+
+output:
+  # "auto" = iCloud Drive/Parking/parking_status.json for this OS.
+  # Or put a full path here.
+  json_path: auto
+  # Re-write the JSON at least this often even without changes, so the
+  # "updated" time in the file shows the monitor is alive.
+  heartbeat_seconds: 300
+  log_path: "logs/parking.log"
+
+notifications:
+  enabled: true
+  server: "https://ntfy.sh"
+  # Anyone who knows the topic name can read it - make it long and random.
+  topic: "parking-0ea239f45303"
+  token: ""                 # only for a protected/self-hosted ntfy server
+  # Tapping a notification opens the Parking app (your private Tailscale address).
+  click_url: "https://laptop-t1iis3tf.tail163fff.ts.net"
+  notify_on_startup: false  # also push the first state found after start

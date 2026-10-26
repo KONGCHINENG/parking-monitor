@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- launchd agent (runs while you are logged in, needed for iCloud Drive).
+     1. Replace /Users/YOU/parking-monitor with your project path (3 places).
+     2. cp deploy/macos/com.parking.monitor.plist ~/Library/LaunchAgents/
+     3. launchctl load ~/Library/LaunchAgents/com.parking.monitor.plist
+     Stop: launchctl unload ~/Library/LaunchAgents/com.parking.monitor.plist -->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.parking.monitor</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/YOU/parking-monitor/.venv/bin/python</string>
+    <string>/Users/YOU/parking-monitor/parking_monitor.py</string>
+    <string>run</string>
+  </array>
+  <key>WorkingDirectory</key><string>/Users/YOU/parking-monitor</string>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>          <!-- restart if it exits -->
+  <key>ThrottleInterval</key><integer>30</integer>
+</dict>
+</plist>

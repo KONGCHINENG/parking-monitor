@@ -1,0 +1,33 @@
+AP-mode test 2026-10-13 19:44:57
+WiFi SSID: Nax_5c002000E0F3
+Probing 192.168.169.1 ...
+  TCP    80 closed  (HTTP)
+  TCP    81 closed  (HTTP alt)
+  TCP   443 closed  (HTTPS)
+  TCP   554 closed  (RTSP)
+  TCP  8000 closed  (ONVIF/HTTP alt)
+  TCP  8080 closed  (HTTP alt)
+  TCP  8554 closed  (RTSP alt)
+  TCP  8899 closed  (ONVIF alt)
+  TCP  6123 OPEN    (A9/V720 control (AP mode))
+  TCP    23 closed  (telnet)
+  TCP  1883 closed  (MQTT)
+
+  ONVIF WS-Discovery (UDP 3702): no answer
+
+Verdict:
+  Only the A9/V720 control port -> use source.type: a9v720 (no native local stream).
+
+Connecting to 192.168.169.1:6123 ...
+CONNECTION / STREAM ERROR:
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\Parking Monitor\parking-monitor\tools\ap_test.py", line 100, in main
+    cam.init_live_motion()
+  File "C:\Users\User\Desktop\Parking Monitor\a9-v720\src\v720_ap.py", line 87, in init_live_motion
+    self.baseinfo().content['version'])
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'content'
+
+
+=== RESULT ===
+NO VIDEO received. See errors above.

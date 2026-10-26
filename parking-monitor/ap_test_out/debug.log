@@ -1,0 +1,30 @@
+2026-10-13 19:57:48,930 TCP-CL 192.168.169.1:6123 INFO Connected
+2026-10-13 19:57:48,931 parking.sources INFO a9v720: connect reply: None
+2026-10-13 19:57:49,057 parking.sources WARNING a9v720: base info attempt 2 failed: 'content'
+2026-10-13 19:57:49,108 parking.sources WARNING a9v720: camera gave no base info (firmware version unknown) - continuing
+2026-10-13 19:57:49,108 root INFO [none] packet cmd=0 payload=b'{"code":502 , "target": "deadbeef", "content":  {"code": 4, "devPower": -1, "interStatus": 1, "fixedOptLight": 1, "motorStatus": 1, "IrLed": 0, "ledEI": 0, "sdDevStatus": 0, "sdCapacity": 0, "cloudSto'
+2026-10-13 19:57:49,109 root INFO [none] packet cmd=0 payload=b'{"code":502 , "target": "deadbeef", "content":  {"code": 4, "devPower": -1, "interStatus": 1, "fixedOptLight": 1, "motorStatus": 1, "IrLed": 0, "ledEI": 0, "sdDevStatus": 0, "sdCapacity": 0, "cloudSto'
+2026-10-13 19:57:49,111 root INFO [none] packet cmd=0 payload=b'{"code":502 , "target": "deadbeef", "content":  {"code": 4, "devPower": -1, "interStatus": 1, "fixedOptLight": 1, "motorStatus": 1, "IrLed": 0, "ledEI": 0, "sdDevStatus": 0, "sdCapacity": 0, "cloudSto'
+2026-10-13 19:57:49,153 root INFO [none] packet cmd=0 payload=b'{"code": 502, "content": {"code": 3, "devTarget": "deadbeef"}}'
+2026-10-13 19:57:53,137 root INFO [none] packet cmd=101 payload=b''
+2026-10-13 19:58:29,519 TCP-CL 192.168.169.1:6123 INFO Connection closed
+2026-10-13 19:58:32,544 TCP-CL 192.168.169.1:6123 INFO Connected
+2026-10-13 19:58:32,544 parking.sources INFO a9v720: connect reply: None
+2026-10-13 19:58:32,883 parking.sources WARNING a9v720: base info attempt 3 failed: 'content'
+2026-10-13 19:58:32,883 parking.sources WARNING a9v720: camera gave no base info (firmware version unknown) - continuing
+2026-10-13 19:58:32,883 root INFO [ping] packet cmd=0 payload=b'{"code":502 , "target": "deadbeef", "content":  {"code": 4, "devPower": -1, "interStatus": 1, "fixedOptLight": 1, "motorStatus": 1, "IrLed": 0, "ledEI": 0, "sdDevStatus": 0, "sdCapacity": 0, "cloudSto'
+2026-10-13 19:58:32,883 root INFO [ping] packet cmd=0 payload=b'{"code":502 , "target": "deadbeef", "content":  {"code": 4, "devPower": -1, "interStatus": 1, "fixedOptLight": 1, "motorStatus": 1, "IrLed": 0, "ledEI": 0, "sdDevStatus": 0, "sdCapacity": 0, "cloudSto'
+2026-10-13 19:58:33,027 root INFO [ping] packet cmd=0 payload=b'{"code":502 , "target": "deadbeef", "content":  {"code": 4, "devPower": -1, "interStatus": 1, "fixedOptLight": 1, "motorStatus": 1, "IrLed": 0, "ledEI": 0, "sdDevStatus": 0, "sdCapacity": 0, "cloudSto'
+2026-10-13 19:58:33,095 root INFO [ping] packet cmd=0 payload=b'{"code": 502, "content": {"code": 3, "devTarget": "deadbeef"}}'
+2026-10-13 19:58:37,036 root INFO [ping] packet cmd=101 payload=b''
+2026-10-13 19:59:13,290 TCP-CL 192.168.169.1:6123 INFO Connection closed
+2026-10-13 19:59:16,318 TCP-CL 192.168.169.1:6123 INFO Connected
+2026-10-13 19:59:16,320 parking.sources INFO a9v720: connect reply: None
+2026-10-13 19:59:16,447 parking.sources WARNING a9v720: base info attempt 3 failed: 'content'
+2026-10-13 19:59:16,448 parking.sources WARNING a9v720: camera gave no base info (firmware version unknown) - continuing
+2026-10-13 19:59:16,449 root INFO [heartbeat] packet cmd=0 payload=b'{"code":502 , "target": "deadbeef", "content":  {"code": 4, "devPower": -1, "interStatus": 1, "fixedOptLight": 1, "motorStatus": 1, "IrLed": 0, "ledEI": 0, "sdDevStatus": 0, "sdCapacity": 0, "cloudSto'
+2026-10-13 19:59:16,450 root INFO [heartbeat] packet cmd=0 payload=b'{"code":502 , "target": "deadbeef", "content":  {"code": 4, "devPower": -1, "interStatus": 1, "fixedOptLight": 1, "motorStatus": 1, "IrLed": 0, "ledEI": 0, "sdDevStatus": 0, "sdCapacity": 0, "cloudSto'
+2026-10-13 19:59:16,496 root INFO [heartbeat] packet cmd=0 payload=b'{"code":502 , "target": "deadbeef", "content":  {"code": 4, "devPower": -1, "interStatus": 1, "fixedOptLight": 1, "motorStatus": 1, "IrLed": 0, "ledEI": 0, "sdDevStatus": 0, "sdCapacity": 0, "cloudSto'
+2026-10-13 19:59:16,496 root INFO [heartbeat] packet cmd=0 payload=b'{"code": 502, "content": {"code": 3, "devTarget": "deadbeef"}}'
+2026-10-13 19:59:20,506 root INFO [heartbeat] packet cmd=101 payload=b''
+2026-10-13 19:59:56,817 TCP-CL 192.168.169.1:6123 INFO Connection closed

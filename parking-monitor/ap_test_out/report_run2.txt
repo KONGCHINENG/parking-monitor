@@ -1,0 +1,33 @@
+AP-mode test 2026-10-13 19:49:57
+WiFi SSID: Nax_5c002000E0F3
+Probing 192.168.169.1 ...
+  TCP    80 closed  (HTTP)
+  TCP    81 closed  (HTTP alt)
+  TCP   443 closed  (HTTPS)
+  TCP   554 closed  (RTSP)
+  TCP  8000 closed  (ONVIF/HTTP alt)
+  TCP  8080 closed  (HTTP alt)
+  TCP  8554 closed  (RTSP alt)
+  TCP  8899 closed  (ONVIF alt)
+  TCP  6123 OPEN    (A9/V720 control (AP mode))
+  TCP    23 closed  (telnet)
+  TCP  1883 closed  (MQTT)
+
+  ONVIF WS-Discovery (UDP 3702): no answer
+
+Verdict:
+  Only the A9/V720 control port -> use source.type: a9v720 (no native local stream).
+
+Connecting to 192.168.169.1:6123 ...
+Handshake OK. Base info: (none - firmware did not answer)
+Capturing live video for 30 s ...
+First frame received: 640x480
+Stream stopped by the camera before the test finished.
+a9-v720 printed:
+First frame received: 640x480
+
+=== RESULT ===
+Frames: 17 good, 0 corrupt, ~3.7 fps
+Resolution: 640x480
+No ArUco markers visible (fine if none are placed yet).
+VIDEO WORKS -> AP mode is usable. Snapshots in ap_test_out/.
